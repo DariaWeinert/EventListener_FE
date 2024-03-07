@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Flex, Box, FormControl, Input, Button, extendTheme, ChakraProvider, InputGroup, InputRightElement, IconButton } from '@chakra-ui/react';
+import { Flex, Box, FormControl, Input, Button, extendTheme, ChakraProvider, InputGroup, InputRightElement, IconButton, Link } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import SignUpModal from '@/Components/SignUpModal/SignUpModal';
-import './NavBar.css';
 import { Avatar } from '@chakra-ui/react';
 import { AiOutlineUser } from 'react-icons/ai';
 
@@ -44,7 +43,7 @@ const theme = extendTheme({
 });
 
 const NavBar: React.FC<NavBarProps> = ({ onSearch, isLoggedIn }) => {
- 
+
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value;
@@ -68,7 +67,7 @@ const NavBar: React.FC<NavBarProps> = ({ onSearch, isLoggedIn }) => {
   const handleProfileClick = () => { };
 
   const handleSearchButtonClick = () => {
-
+    <Link href={`/events`} _hover={{ textDecoration: 'none' }}/>
   };
 
   return (
@@ -95,7 +94,7 @@ const NavBar: React.FC<NavBarProps> = ({ onSearch, isLoggedIn }) => {
                     aria-label="Search"
                     colorScheme="red"
                     icon={<SearchIcon />}
-                    onClick={handleSearchButtonClick} 
+                    onClick={handleSearchButtonClick}
                   />
                 </InputRightElement>
               </InputGroup>
