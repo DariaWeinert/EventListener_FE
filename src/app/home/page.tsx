@@ -30,8 +30,29 @@ export default function Home() {
                 <Box p={4}>
                     <EventButton
                         id="1"
-                        topic="Sample Event"
-                        date="2024-03-07"
+                        topic="Встреча анонимных безработных"
+                        date="2024-03-09"
+                        time="10:00 AM"
+                        backgroundImageUrl="https://example.com/image.jpg"
+                    />
+                      <EventButton
+                        id="2"
+                        topic="Sample Event 2"
+                        date="2024-03-10"
+                        time="10:00 AM"
+                        backgroundImageUrl="https://example.com/image.jpg"
+                    />
+                       <EventButton
+                        id="3"
+                        topic="Sample Event 3"
+                        date="2024-03-11"
+                        time="10:00 AM"
+                        backgroundImageUrl="https://example.com/image.jpg"
+                    />
+                       <EventButton
+                        id="4"
+                        topic="Sample Event 4"
+                        date="2024-03-12"
                         time="10:00 AM"
                         backgroundImageUrl="https://example.com/image.jpg"
                     />
