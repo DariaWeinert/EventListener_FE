@@ -43,7 +43,7 @@ const Step2: React.FC<Step2Props> = ({ onNextStep, onPrevStep, onFileChange }) =
     };
 
     // Функция для отправки запроса к API
-    const fetchCityCoordinates = async (cityName: string) => {
+  const fetchCityCoordinates = async (cityName: string) => {
         try {
             setError('');
             const response = await axios.get(`https://nominatim.openstreetmap.org/search?q=${cityName}&format=geojson&accept-language=en`);
