@@ -31,9 +31,11 @@ interface MapProps {
     events: Event[];
     height: string
     isEventDetails: any
+    latCenter: number
+    lonCenter: number
 }
 
-const Map: React.FC<MapProps> = ({ events, height, isEventDetails }) => {
+const Map: React.FC<MapProps> = ({ events, height, isEventDetails, latCenter, lonCenter }) => {
     const mapContainerRef = useRef<any>(null);
     const [coordinates, setCoordinates] = useState<{ [key: string]: { lat: string, lon: string } }>({});
     const [mapInitialized, setMapInitialized] = useState(false);
@@ -62,7 +64,7 @@ const Map: React.FC<MapProps> = ({ events, height, isEventDetails }) => {
         <Box>
             {/* <div style={{ width: '400px', height: '65vh', marginTop: '50px', borderRadius: '5px' }} ref={mapContainerRef}> */}
             {/* <Flex width='100%' height={height} borderRadius='5px' ref={mapContainerRef}> */}
-            <MapContainer center={[32.7941, 34.9896]} zoom={12} style={{ width: '100%', height: height, border: '1px', borderRadius: '5px' }}>
+            <MapContainer center={[lonCenter, latCenter]} zoom={12} style={{ width: '100%', height: height, border: '1px', borderRadius: '5px' }}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 {events.map(event => {
                     let lat = 0;

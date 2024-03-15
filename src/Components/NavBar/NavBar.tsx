@@ -73,8 +73,6 @@ const NavBar: React.FC<NavBarProps> = ({ onSearch, user }) => {
           flexDirection='row'
           align="center"
           justify="space-between"
-          // p={4}
-          // flexWrap="wrap"
           pr={6}
           pl={6}
           zIndex={10}
@@ -140,6 +138,7 @@ const NavBar: React.FC<NavBarProps> = ({ onSearch, user }) => {
                 leftIcon={<AiOutlinePlus />}
                 width='100vw'
                 borderRadius='5px'
+                fontSize='md'
               >
                 Add Event
               </Button>

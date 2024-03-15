@@ -54,17 +54,16 @@ const Home = () => {
         fetchData();
     }, []);
 
+    const userCoordinates: any = localStorage.getItem("cityCoords");
+    const userCoordObj = JSON.parse(userCoordinates);
+
     return (
         <Flex className="home-container" direction="column">
             <NavBar onSearch={handleSearch} />
             <Flex
-                // direction={{ base: 'column', md: 'row' }}
                 flexDirection='row'
                 alignItems="center"
                 justifyContent="space-between"
-                // width="100%"
-                // marginTop="20px"
-                // marginBottom="20px"
                 paddingLeft="40px"
                 paddingRight="40px"
             >
@@ -77,8 +76,8 @@ const Home = () => {
                     </Box>
                 ) : (
                     <>
-                        <Box flexGrow={2} marginTop='110px' marginRight='50px' zIndex={0}>
-                            <DynamicMap height='65vh' events={addresses} isEventDetails={null} />
+                        <Box flexGrow={2} width="30%"  marginTop='125px' marginRight='20px' zIndex={0}>
+                            <DynamicMap lonCenter={userCoordObj ? userCoordObj.latitude : 32.109333} latCenter={userCoordObj ? userCoordObj.longitude : 34.855499}  height='72vh' events={addresses} isEventDetails={null} />
                         </Box>
                         <Box flexGrow={1} width="40%" marginTop='120px'>
                             <EventList events={events} />
@@ -87,22 +86,11 @@ const Home = () => {
                 )}
                 <Box
                     flexGrow={0}
-                    marginTop='-80px'
-                    //width={{ base: "100%", md: "18%" }}
-                    // marginLeft={{ base: "0", md: "20px" }}
-                    // marginRight={'30px'}
+                    marginTop='120px'
                 >
                     <Calendar width="300px" />
                 </Box>
             </Flex>
-            <Box
-                position="fixed"
-                bottom="20px"
-                right="20px"
-                zIndex="999"
-                fontSize="10px"
-            >
-            </Box>
         </Flex>
     );
 };

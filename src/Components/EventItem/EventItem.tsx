@@ -77,7 +77,8 @@ const EventItem: React.FC<EventItemProps> = ({ event, imageUrl }) => {
             boxShadow="md"
             backgroundColor="#fff"
             position="relative"
-            margin={8}
+            margin="8px" 
+            padding="0px" 
             textAlign="start"
             onMouseEnter={() => {
                 getAddressByCoordinates(event.address.coordinates);
@@ -88,7 +89,7 @@ const EventItem: React.FC<EventItemProps> = ({ event, imageUrl }) => {
                 setShowDetails(false)
             }}
             transition="width 0.1s, height 01s"
-            _hover={{ width: "270px", height: "270px" }}
+            _hover={{ width: "260px", height: "260px" }}
         >
             <Box position="absolute" top="9px" left="1px" width="100%" height="100%">
                 <LikeButtonSmall setIsLiked={setIsLiked} isLiked={isLiked} eventId={_id} />

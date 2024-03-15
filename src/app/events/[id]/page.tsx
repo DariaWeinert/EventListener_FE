@@ -235,7 +235,7 @@ export default function EventDetailsPage() {
                                     <Flex flexDirection="column">
                                         <Heading size="md">Fees: </Heading>
                                         <Tag mt={2} size='lg' borderRadius='full' bg='red.500'>
-                                            <TagLabel color="white" fontSize="2xl" ml={2}>{event.budget}$</TagLabel>
+                                            <TagLabel color="white" fontSize="2xl" ml={2}>{event.budget} ₪</TagLabel>
                                         </Tag>
                                     </Flex>
                                     <Flex flexDirection="column">
@@ -253,7 +253,7 @@ export default function EventDetailsPage() {
                                 </Stack>
                                 <Flex gap={5}>
                                     <Box flexGrow={5}>
-                                        <DynamicMap height="400px" events={[event]} isEventDetails={true}/>
+                                        <DynamicMap height="400px" events={[event]} isEventDetails={true} latCenter={event.address.coordinates[0]} lonCenter={event.address.coordinates[1]}/>
                                     </Box>
                                     <Flex flexDirection="column" flexGrow={1}>
                                         <Card flex={1}>
